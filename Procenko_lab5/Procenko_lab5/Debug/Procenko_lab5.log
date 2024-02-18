@@ -1,0 +1,25 @@
+﻿  Procenko_lab5.cpp
+C:\Users\Дима\source\repos\Procenko_lab5\Procenko_lab5\Procenko_lab5.cpp(11,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Дима\source\repos\Procenko_lab5\Procenko_lab5\Procenko_lab5.cpp(116,19): warning C4018: <=: несоответствие типов со знаком и без знака
+C:\Users\Дима\source\repos\Procenko_lab5\Procenko_lab5\Procenko_lab5.cpp(241): message : выполняется компиляция ссылки на экземпляр шаблон функции "void Arifm<int>(std::vector<int,std::allocator<int>>,int,std::vector<int,std::allocator<int>>,int)"
+C:\Users\Дима\source\repos\Procenko_lab5\Procenko_lab5\Procenko_lab5.cpp(121,19): warning C4244: аргумент: преобразование "double" в "_Ty", возможна потеря данных
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\Дима\source\repos\Procenko_lab5\Procenko_lab5\Procenko_lab5.cpp(124,1): warning C4244: -=: преобразование "double" в "_Ty", возможна потеря данных
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\Дима\source\repos\Procenko_lab5\Procenko_lab5\Procenko_lab5.cpp(152,1): warning C4244: -=: преобразование "double" в "_Ty", возможна потеря данных
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\Дима\source\repos\Procenko_lab5\Procenko_lab5\Procenko_lab5.cpp(154,20): warning C4244: аргумент: преобразование "double" в "_Ty", возможна потеря данных
+          with
+          [
+              _Ty=int
+          ]
+  Procenko_lab5.vcxproj -> C:\Users\Дима\source\repos\Procenko_lab5\Debug\Procenko_lab5.exe
