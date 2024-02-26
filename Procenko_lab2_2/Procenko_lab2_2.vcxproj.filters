@@ -29,5 +29,32 @@
     <Text Include="Enrollee.txt">
       <Filter>Исходные файлы</Filter>
     </Text>
+    <Text Include="f.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="f1.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="h.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="matrix.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="matrix1.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="matrix2.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="Book.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="Memo.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
+    <Text Include="Internet.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
   </ItemGroup>
 </Project>

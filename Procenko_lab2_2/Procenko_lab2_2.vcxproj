@@ -156,7 +156,16 @@
   <ItemGroup>
     <Text Include="a.txt" />
     <Text Include="a1.txt" />
+    <Text Include="Book.txt" />
     <Text Include="Enrollee.txt" />
+    <Text Include="f.txt" />
+    <Text Include="f1.txt" />
+    <Text Include="h.txt" />
+    <Text Include="Internet.txt" />
+    <Text Include="matrix.txt" />
+    <Text Include="matrix1.txt" />
+    <Text Include="matrix2.txt" />
+    <Text Include="Memo.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
