@@ -10,7 +10,7 @@ class Enrollee //Класс абитуриента
 {
 public:
 
-	Enrollee(string surname, string name, string patronymic, string sex, string nationality, string adress, string berthday, string sumExamMarks) //Конструктор, записывающий все данные при создании экземпляра
+	Enrollee(string surname, string name, string patronymic, string sex, string nationality, string adress, string berthday, int sumExamMarks, int passMark) //Конструктор, записывающий все данные при создании экземпляра
 	{
 		this->surname = surname;
 		this->name = name;
@@ -20,15 +20,15 @@ public:
 		this->adress = adress;
 		this->berthday = berthday;
 		this->sumExamMarks = sumExamMarks;
+		this->passMark = passMark;
 		cout << "Карточка абитуриента создана:" << endl;
 	}
-
 	string GetInformation() const //Получаем данные об абитуриенте
 	{ 
-		string iform = this->surname + " " + this->name + " " + this->patronymic + " " + this->sex + " " + this->nationality + " " + this->adress + " " + this->berthday + " " + this->sumExamMarks + "\n";
+		string iform = this->surname + " " + this->name + " " + this->patronymic + " " + this->sex + " " + this->nationality + " " + this->adress + " " + this->berthday + " " + to_string(this->sumExamMarks) + " " + to_string(this->passMark) + "\n";
 		return iform; 
 	}
-	void SetInformation(string surname, string name, string patronymic, string sex, string nationality, string adress, string berthday, string sumExamMarks) //Устанавливаем данные абитуриента
+	void SetInformation(string surname, string name, string patronymic, string sex, string nationality, string adress, string berthday, int sumExamMarks, int passMark) //Устанавливаем данные абитуриента
 	{
 		this->surname = surname;
 		this->name = name;
@@ -38,22 +38,23 @@ public:
 		this->adress = adress;
 		this->berthday = berthday;
 		this->sumExamMarks = sumExamMarks;
+		this->passMark = passMark;
 	}
-
-private:
-	string surname, name, patronymic, sex, nationality, adress, berthday, sumExamMarks; //Скорытые данные абитуриента
+	string surname, name, patronymic, sex, nationality, adress, berthday;
+	int sumExamMarks, passMark; //Скорытые данные абитуриента
 };
 
 ostream& operator << (ostream& os, const Enrollee enrollee) //Переопределение оператора << для Enrollee
 {
-	return os << enrollee.GetInformation();
+	return os << enrollee.surname << " " << enrollee.name << " " << enrollee.patronymic << " " << enrollee.sex << " " << enrollee.nationality << " " << enrollee.adress << " " << enrollee.berthday << " " << enrollee.sumExamMarks << " " << enrollee.passMark << " " << "\n";
 }
 
 istream& operator >> (istream& in, Enrollee& enrollee)  //Переопределение оператора >> для Enrollee
 {
-	string surname, name, patronymic, sex, nationality, adress, berthday, sumExamMarks;
-	in >> surname >> name >> patronymic >> sex >> nationality >> adress >> berthday >> sumExamMarks;
-	enrollee.SetInformation(surname, name, patronymic, sex, nationality, adress, berthday, sumExamMarks);
+	string surname, name, patronymic, sex, nationality, adress, berthday;
+	int sumExamMarks, passMark;
+	in >> surname >> name >> patronymic >> sex >> nationality >> adress >> berthday >> sumExamMarks >> passMark;
+	enrollee.SetInformation(surname, name, patronymic, sex, nationality, adress, berthday, sumExamMarks, passMark);
 	return in;
 }
 
@@ -339,7 +340,7 @@ int main()
 				case 2:
 				{
 					fstream txt("a.txt", ios::in); //Открываем файл для чтения
-					int inum = 0; //Для вычисления порядка
+					int inum = 1; //Для вычисления порядка
 					int count = 0; //Количество подходящих чисел
 					int n;
 					while (txt >> n)
@@ -353,7 +354,12 @@ int main()
 					cout << "Количество удовлетворяющих условию чисел: " << count << endl; //Выводим количество чисел
 					break;
 				}
+				default:
+				{
+					cout << "Такого действия нет, извините" << endl;
+				}
 			}
+			break;
 		}
 		case 5:
 		{
@@ -367,7 +373,8 @@ int main()
 				{
 					case 1: //Создает новую запись в файл
 					{
-						string surname, name, patronymic, sex, nationality, adress, berthday, sumExamMarks; //Записываем все данные абитуриента
+						string surname, name, patronymic, sex, nationality, adress, berthday;
+						int sumExamMarks, passMark; //Записываем все данные абитуриента
 						cout << "Вместо пробела используйте '_'" << endl;
 						cout << "Введите вашу Фамилию:" << endl;
 						cin >> surname;
@@ -385,24 +392,29 @@ int main()
 						cin >> berthday;
 						cout << "Введите ваш Балл по экзаменам (3 предмета в сумме):" << endl;
 						cin >> sumExamMarks;
-						Enrollee enrollee(surname, name, patronymic, sex, nationality, adress, berthday, sumExamMarks); //Создаем экземпдяр класса с данными абитуриента
-						fstream txt("Enrollee.txt", ios::app); //Открываем файл для дополнения
+						cout << "Введите ваш проходной балл:" << endl;
+						cin >> passMark;
+						Enrollee enrollee(surname, name, patronymic, sex, nationality, adress, berthday, sumExamMarks, passMark); //Создаем экземпдяр класса с данными абитуриента
+						fstream txt("Enrollee.txt", ios::app || ios::binary); //Открываем файл для дополнения
 						txt << enrollee; //Дописываем ифнормацию о новом абитуриенте
 						txt.close();
 						break;
 					}
 					case 2: //Считывает весь файл
 					{
-						fstream txt("Enrollee.txt", ios::in); //Открываем для чтения
+						fstream txt("Enrollee.txt", ios::in || ios::binary); //Открываем для чтения
 						vector<Enrollee> listEnrollee; //Создаем вектор для хранения абитуриентов
-						Enrollee enr("f", "f", "f", "f", "f", "f", "f", "f");
+						Enrollee enr("f", "f", "f", "f", "f", "f", "f", 0, 0);
 						while (txt >> enr) //Записываем по одному абитуриенту в экземпляр
 						{
 							listEnrollee.push_back(enr); //Записываем данные в базу
 						}
 						for (const Enrollee& en : listEnrollee)
 						{
-							cout << en; //Выводим данные из базы абитуриентов
+							if (en.passMark >= 4)
+							{
+								cout << en; //Выводим данные из базы абитуриентов
+							}
 						}
 						break;
 					}
@@ -425,6 +437,7 @@ int main()
 					}
 				}
 			}
+			break;
 		}
 		case 6:
 		{
@@ -572,6 +585,7 @@ int main()
 			txt2.open("matrix2.txt", ios::out);
 			txt1.close();
 			txt2.close();
+			break;
 		}
 		case 8:
 		{
@@ -602,7 +616,7 @@ int main()
 				listBooks.push_back(book); //Переносим их в вектор
 			}
 			int iter; //Итератор
-			for (int i = 0; i < listBooks.size(); i++)
+			for (int i = 0; i < (int)listBooks.size(); i++)
 			{
 				iter = 0;
 				for (char f : listBooks[i].nameBook)

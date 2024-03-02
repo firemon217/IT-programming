@@ -1,4 +1,3 @@
 ﻿  Procenko_lab2_2.cpp
-C:\Users\Дима\source\repos\Procenko_lab2_2\Procenko_lab2_2.cpp(551,22): warning C4244: =: преобразование "std::streamoff" в "size_t", возможна потеря данных
-C:\Users\Дима\source\repos\Procenko_lab2_2\Procenko_lab2_2.cpp(604,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Дима\source\repos\Procenko_lab2_2\Procenko_lab2_2.cpp(569,22): warning C4244: =: преобразование "std::streamoff" в "size_t", возможна потеря данных
   Procenko_lab2_2.vcxproj -> C:\Users\Дима\source\repos\Procenko_lab2_2\Debug\Procenko_lab2_2.exe
