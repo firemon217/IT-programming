@@ -1,0 +1,4 @@
+﻿  Fraction.cpp
+C:\Users\student-09-429\source\repos\ProcenkoLab3_2\Fraction.cpp(44): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\student-09-429\source\repos\ProcenkoLab3_2\Fraction.cpp(61): warning C4018: <: несоответствие типов со знаком и без знака
+  ProcenkoLab3_2.vcxproj -> C:\Users\student-09-429\source\repos\ProcenkoLab3_2\Debug\ProcenkoLab3_2.exe
