@@ -1,8 +1,8 @@
-#include "Fraction.h"
+#include "Fraction.h" //Определяем методы класса из заголовочного файла
 #include <iostream>
 #include <string>
 
-Fraction<double>::Fraction()
+Fraction<double>::Fraction() //Конструктор, записывающий в объект числитель и знаменатель (для дробных значений)
 {
 	double denominator;
 	double numerator;
@@ -14,7 +14,7 @@ Fraction<double>::Fraction()
 	this->numerator = numerator;
 }
 
-Fraction<int>::Fraction()
+Fraction<int>::Fraction() //Конструктор, записывающий в объект числитель и знаменатель (для целых значений)
 {
 	int denominator;
 	int numerator;
@@ -26,45 +26,41 @@ Fraction<int>::Fraction()
 	this->numerator = numerator;
 }
 
-double Fraction<double>::ByPercent()
+double Fraction<double>::ByPercent()//Высчитывает процентное соотношение дроби (для дробных значений)
 {
 	return (this->numerator / this->denominator) * 100;
 }
 
-double Fraction<int>::ByPercent()
+double Fraction<int>::ByPercent()//Высчитывает процентное соотношение дроби (для целых значений)
 {
 	return (this->numerator / (double)this->denominator) * 100;
 }
 
-int Fraction<double>::SumNumberDenominator()
+int Fraction<double>::SumNumberDenominator() //Суммирует цифры знаменателя (для дробных значений)
 {
 	std::string num;
-	num = std::to_string(this->denominator);
+	num = std::to_string(this->denominator); //Переводит в строковый формат
 	int sum = 0;
-	for (int i = 0; i < num.size(); i++)
+	for (int i = 0; i < num.size(); i++) //Разбиваем строку на цифры
 	{
-		std::cout << (int)num[i] << std::endl;
-		if ((int)num[i] == 54 || (int)num[i] == 44 || (int)num[i] == 48)
+
+		if (num[i] == ',' || num[i] == '.') //Игнорируем точку
 		{
 			continue;
 		}
-		sum += (int)(num[i]);
+		sum += num[i] - '0'; //Суммируем
 	}
 	return sum;
 }
 
-int Fraction<int>::SumNumberDenominator()
+int Fraction<int>::SumNumberDenominator() //Суммирует цифры знаменателя (для целых значений)
 {
 	std::string num;
-	num = std::to_string(this->denominator);
+	num = std::to_string(this->denominator); //Переводит в строковый формат
 	int sum = 0;
-	for (int i = 0; i < num.size(); i++)
+	for (int i = 0; i < num.size(); i++) //Разбиваем строку на цифры
 	{
-		if (num[i] == '.')
-		{
-			continue;
-		}
-		sum += (int)(num[i]);
+		sum += (int)(num[i]); //Суммируем
 	}
 	return sum;
 }

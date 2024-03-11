@@ -1,8 +1,8 @@
-#include "Triangle.h"
+#include "Triangle.h" //Определяем методы класса из заголовочного файла
 #include "math.h"
 #include <iostream>
 
-RightTriangle::RightTriangle()
+RightTriangle::RightTriangle() //Конструктор, определяющий катеты треугольника-объекта
 {
 	double legH;
 	double legW;
@@ -14,27 +14,27 @@ RightTriangle::RightTriangle()
 	this->legH = legH;
 }
 
-double RightTriangle::GetlegH()
+double RightTriangle::GetlegH() //Получаем 1 катет
 {
 	return this->legH;
 }
 
-double RightTriangle::GetlegW()
+double RightTriangle::GetlegW() //Получаем 2 катет
 {
 	return this->legW;
 }
 
-void RightTriangle::SetlegH(double legH)
+void RightTriangle::SetlegH(double legH) //Устанавливаем значение 1 катета
 {
 	this->legH = legH;
 }
 
-void RightTriangle::SetlegW(double legW)
+void RightTriangle::SetlegW(double legW) //Устанавливаем значение 2 катета
 {
 	this->legW = legW;
 }
 
-double RightTriangle::GetHypotenuse()
+double RightTriangle::GetHypotenuse() //Получаем гипотенузу треугольника
 {
-	return sqrt(pow(this->legH, 2) + pow(this->legW, 2));
+	return sqrt(pow(this->legH, 2) + pow(this->legW, 2)); //Теорема Пифагора
 }
