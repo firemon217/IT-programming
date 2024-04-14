@@ -1,7 +1,5 @@
 ﻿  Exp.cpp
   Line.cpp
-  Menu.cpp
   ProcenkoLab4_2.cpp
   Создание кода...
-C:\Users\Дима\source\repos\ProcenkoLab4_2\ProcenkoLab4_2\Menu.h(8): warning C4172: возвращение адреса локальной или временной переменной
-  ProcenkoLab4_2.vcxproj -> C:\Users\Дима\source\repos\ProcenkoLab4_2\Debug\ProcenkoLab4_2.exe
+  ProcenkoLab4_2.vcxproj -> C:\Work\GitHub\ItProgs\IT-programming\ProcenkoLab4_2\Debug\ProcenkoLab4_2.exe

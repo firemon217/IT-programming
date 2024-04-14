@@ -2,13 +2,11 @@
 #include "Function.h"
 #include <vector>
 
-class Menu : public Function
+class Menu //Класс меню функций
 {
-	public:
-		const std::string& GetName() { return "1"; };
-		void Calculate() {};
-		Menu(std::vector<Function*>);
-		Function* SelectObject();
+	public: 
+		Menu(std::vector<Function*>); //Конструктор
+		Function* SelectObject(); // Выбор функции
 	private:
 		int SelectItem(int);
 		std::vector<Function*> pObject;

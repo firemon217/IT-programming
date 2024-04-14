@@ -5,12 +5,12 @@
 class Line : public Function
 {
 	public:
-		Line();
-		const std::string& GetName();
-		void Calculate();
+		Line(); //Конструктор
+		const std::string& GetName(); 
+		void Calculate(); //Калькулятор
 	protected:
-		std::string name;
-		double a;
+		std::string name; //Имя
+		double a; //Коэфиценты
 		double b;
 };
 

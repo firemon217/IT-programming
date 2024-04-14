@@ -5,20 +5,21 @@
 
 using namespace std;
 
-void Exp::Calculate()
+void Exp::Calculate() //Калькулятор
 {
-	cout << "Уравнение вида: y = " << name << endl;
+	cout << "Уравнение вида: y = " << name << endl; //Получение коэфицентов и значения х
 	cout << "Введите x: ";
 	cin >> x;
-	cout << "y = " << exp(x) << endl;
+	cout << "y = " << exp(x) << endl; //Вывод результата
 }
 
-Exp::Exp()
+
+Exp::Exp() //Конструктор
 {
 	this->name = "e ^ x";
 }
 
-const string& Exp::GetName()
+const string& Exp::GetName() //Возвращает имя
 {
 	return name;
 }
