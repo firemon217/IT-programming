@@ -1,2 +1,6 @@
 ﻿  ProcenkoLab5_2.cpp
-  ProcenkoLab5_2.vcxproj -> C:\Users\Дима\source\repos\ProcenkoLab5_2\Debug\ProcenkoLab5_2.exe
+C:\Work\GitHub\ItProgs\IT-programming\ProcenkoLab5_2\ProcenkoLab5_2\MyQueue.cpp(22,14): warning C4101: i: неиспользованная локальная переменная
+C:\Work\GitHub\ItProgs\IT-programming\ProcenkoLab5_2\ProcenkoLab5_2\MyQueue.cpp(5): message : во время компиляции функции-члена класс шаблон "void MyQueue<int>::Menu(void)"
+C:\Work\GitHub\ItProgs\IT-programming\ProcenkoLab5_2\ProcenkoLab5_2\ProcenkoLab5_2.cpp(30): message : выполняется компиляция ссылки на экземпляр шаблон функции "void MyQueue<int>::Menu(void)"
+C:\Work\GitHub\ItProgs\IT-programming\ProcenkoLab5_2\ProcenkoLab5_2\ProcenkoLab5_2.cpp(29): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "MyQueue<int>"
+  ProcenkoLab5_2.vcxproj -> C:\Work\GitHub\ItProgs\IT-programming\ProcenkoLab5_2\Debug\ProcenkoLab5_2.exe

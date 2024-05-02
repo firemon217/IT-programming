@@ -139,10 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MyQueue.cpp" />
     <ClCompile Include="PrioryQueue.cpp" />
     <ClCompile Include="ProcenkoLab5_2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MyQueue.h" />
     <ClInclude Include="PrioryQueue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

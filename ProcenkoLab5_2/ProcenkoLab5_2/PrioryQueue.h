@@ -21,21 +21,22 @@ class PrioryQueue
 	Node* pbegin; //Указатель на первый элемент очереди
 	Node* pend; //Указатель на последний элемент очереди
 	public:
+		PrioryQueue() { pbegin = 0; pend = 0; }; //Конструктор
 		void Add(Data dat) //Добавляет элемент в очередь
 		{
 			Node* pelem = new Node(dat); //Новый элемент
-			if (pbegin == pend == 0) //Если элементов еще нет
+			if (pbegin == pend && pbegin == 0 && pend == 0) //Если элементов еще нет
 			{
-				pbegin = pend = pelem;
+				pbegin = pelem;
+				pend = pelem;
 			}
 			else //Если элементы уже есть
 			{
-				pelem->prev = pend; 
+				pelem->prev = pend;
 				pend->next = pelem;
 				pend = pelem;
 			}
 		};
-		PrioryQueue() { pbegin = 0; pend = 0; }; //Конструктор
 		void Remove() //Удаление элемента из очереди (Удаляет самый большой элемент)
 		{
 			Node* pelem = pbegin; 
@@ -53,8 +54,19 @@ class PrioryQueue
 			{
 				if (pelem->data == maxim) //Если находим элемент/ы - удаляем его
 				{
-					(pelem->prev)->next = pelem->next;
+					if (pelem == pbegin)
+					{
+						pbegin = pelem->next;
+						break;
+					}
+					if (pelem == pend)
+					{ 
+						pend = pelem->prev;
+						break;
+					}
 					(pelem->next)->prev = pelem->prev;
+					(pelem->prev)->next = pelem->next;
+					break;
 				}
 				pelem = pelem->next;
 			}
